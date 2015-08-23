@@ -1,11 +1,12 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-using System.Text;
+
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using System.Diagnostics.Contracts;
 
-namespace System.Collections.Generic {
+namespace System {
 
     /// <summary>
     /// Helper so we can call some tuple methods recursively without knowing the underlying types.

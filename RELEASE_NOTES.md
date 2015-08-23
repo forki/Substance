@@ -1,5 +1,5 @@
-#### 0.0.5-beta - August 23 2015
-* Tuple in Collections.Generic
+#### 0.0.9-beta - August 23 2015
+* Tuple in System
 
 #### 0.0.1-beta - August 23 2015
 * Collections
