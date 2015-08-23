@@ -172,7 +172,7 @@ Target "NuGet" (fun _ ->
         { p with
             OutputPath = "bin"
             Version = release.NugetVersion
-            ReleaseNotes = toLines release.Notes})
+            ReleaseNotes = toLines release.Notes |> sprintf "\"%s\""})
 )
 
 Target "PublishNuget" (fun _ ->
@@ -288,16 +288,17 @@ Target "AddLangDocs" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Release Scripts
 
-Target "ReleaseDocs" (fun _ ->
-    let tempDocsDir = "temp/gh-pages"
-    CleanDir tempDocsDir
-    Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "gh-pages" tempDocsDir
-
-    CopyRecursive "docs/output" tempDocsDir true |> tracefn "%A"
-    StageAll tempDocsDir
-    Git.Commit.Commit tempDocsDir (sprintf "Update generated documentation for version %s" release.NugetVersion)
-    Branches.push tempDocsDir
-)
+Target "ReleaseDocs" DoNothing
+//Target "ReleaseDocs" (fun _ ->
+//    let tempDocsDir = "temp/gh-pages"
+//    CleanDir tempDocsDir
+//    Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "gh-pages" tempDocsDir
+//
+//    CopyRecursive "docs/output" tempDocsDir true |> tracefn "%A"
+//    StageAll tempDocsDir
+//    Git.Commit.Commit tempDocsDir (sprintf "Update generated documentation for version %s" release.NugetVersion)
+//    Branches.push tempDocsDir
+//)
 
 #load "paket-files/fsharp/FAKE/modules/Octokit/Octokit.fsx"
 open Octokit
