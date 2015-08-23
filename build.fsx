@@ -84,6 +84,7 @@ Target "AssemblyInfo" (fun _ ->
           Attribute.Description summary
           Attribute.Version release.AssemblyVersion
           Attribute.FileVersion release.AssemblyVersion
+          Attribute.InternalsVisibleTo "Substance.Tests"
           Attribute.InternalsVisibleTo "Substance.Collections"
           Attribute.InternalsVisibleTo "Substance.Collections.Generic"
           Attribute.InternalsVisibleTo "Substance.Collections.Immutable" ]

@@ -46,6 +46,7 @@
     <Compile Include="System\Collections\Generic\SortedSet.cs" />
     <Compile Include="System\Collections\Generic\Stack.cs" />
     <Compile Include="System\Collections\Generic\StackDebugView.cs" />
+    <Compile Include="System\Collections\Generic\Tuple.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="paket.references" />
@@ -55,6 +56,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Substance.Collections\Substance.Collections.csproj">
+      <Project>{af688fd4-afbe-4244-9dbb-f383d6b8a427}</Project>
+      <Name>Substance.Collections</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Substance\Substance.csproj">
       <Project>{897d04b7-381c-4d74-ad55-8c8adff77a71}</Project>
       <Name>Substance</Name>
