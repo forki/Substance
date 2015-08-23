@@ -31,6 +31,8 @@
         public static readonly string ArrayInitializedStateNotEqual = "";
         public static readonly string InvalidOperationOnDefaultArray = "";
         public static readonly string InvalidEmptyOperation = "";
+        public static readonly string ArgumentException_TupleIncorrectType = "";
+        public static readonly string ArgumentException_TupleLastArgumentNotATuple = "";
 
         public static string Format(string fmt, string arg1)
         {
