@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B98-5CED-492C-A5B7-A5B4F73CF142}"
 	ProjectSection(SolutionItems) = preProject
 		paket.dependencies = paket.dependencies
@@ -8,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Substance", "src\Substance\Substance.fsproj", "{EA9C37F2-3435-41E2-992D-236B31DEE5AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{BF60BC93-E09B-4E5F-9D85-95A519479D54}"
 	ProjectSection(SolutionItems) = preProject
@@ -32,7 +31,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{8E6D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ED8079DD-2B06-4030-9F0F-DC548F98E1C4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Substance.Tests", "tests\Substance.Tests\Substance.Tests.fsproj", "{46C63AA3-33F9-41D3-B401-6845929281FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Substance", "src\Substance\Substance.csproj", "{897D04B7-381C-4D74-AD55-8C8ADFF77A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Substance.Collections", "src\Substance.Collections\Substance.Collections.csproj", "{AF688FD4-AFBE-4244-9DBB-F383D6B8A427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Substance.Collections.Immutable", "src\Substance.Collections.Immutable\Substance.Collections.Immutable.csproj", "{842F4ED3-06B6-4E66-8BA7-558EDC81EB5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Substance.Collections.Generic", "src\Substance.Collections.Generic\Substance.Collections.Generic.csproj", "{333BEEC2-D4A0-425A-B2DC-CEBB84CCB5D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Substance.Tests", "tests\Substance.Tests\Substance.Tests.csproj", "{6490AB45-611D-4047-8CCA-6BB7471635AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,14 +47,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA9C37F2-3435-41E2-992D-236B31DEE5AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA9C37F2-3435-41E2-992D-236B31DEE5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA9C37F2-3435-41E2-992D-236B31DEE5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA9C37F2-3435-41E2-992D-236B31DEE5AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46C63AA3-33F9-41D3-B401-6845929281FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46C63AA3-33F9-41D3-B401-6845929281FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46C63AA3-33F9-41D3-B401-6845929281FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46C63AA3-33F9-41D3-B401-6845929281FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897D04B7-381C-4D74-AD55-8C8ADFF77A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897D04B7-381C-4D74-AD55-8C8ADFF77A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897D04B7-381C-4D74-AD55-8C8ADFF77A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897D04B7-381C-4D74-AD55-8C8ADFF77A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF688FD4-AFBE-4244-9DBB-F383D6B8A427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF688FD4-AFBE-4244-9DBB-F383D6B8A427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF688FD4-AFBE-4244-9DBB-F383D6B8A427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF688FD4-AFBE-4244-9DBB-F383D6B8A427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842F4ED3-06B6-4E66-8BA7-558EDC81EB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842F4ED3-06B6-4E66-8BA7-558EDC81EB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842F4ED3-06B6-4E66-8BA7-558EDC81EB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842F4ED3-06B6-4E66-8BA7-558EDC81EB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{333BEEC2-D4A0-425A-B2DC-CEBB84CCB5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{333BEEC2-D4A0-425A-B2DC-CEBB84CCB5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{333BEEC2-D4A0-425A-B2DC-CEBB84CCB5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{333BEEC2-D4A0-425A-B2DC-CEBB84CCB5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6490AB45-611D-4047-8CCA-6BB7471635AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6490AB45-611D-4047-8CCA-6BB7471635AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6490AB45-611D-4047-8CCA-6BB7471635AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6490AB45-611D-4047-8CCA-6BB7471635AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +74,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{83F16175-43B1-4C90-A1EE-8E351C33435D} = {A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}
 		{8E6D5255-776D-4B61-85F9-73C37AA1FB9A} = {A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}
-		{46C63AA3-33F9-41D3-B401-6845929281FC} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
+		{6490AB45-611D-4047-8CCA-6BB7471635AC} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 	EndGlobalSection
 EndGlobal

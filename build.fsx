@@ -83,7 +83,10 @@ Target "AssemblyInfo" (fun _ ->
           Attribute.Product project
           Attribute.Description summary
           Attribute.Version release.AssemblyVersion
-          Attribute.FileVersion release.AssemblyVersion ]
+          Attribute.FileVersion release.AssemblyVersion
+          Attribute.InternalsVisibleTo "Substance.Collections"
+          Attribute.InternalsVisibleTo "Substance.Collections.Generic"
+          Attribute.InternalsVisibleTo "Substance.Collections.Immutable" ]
 
     let getProjectDetails projectPath =
         let projectName = System.IO.Path.GetFileNameWithoutExtension(projectPath)
@@ -182,10 +185,11 @@ Target "PublishNuget" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Generate the documentation
 
-Target "GenerateReferenceDocs" (fun _ ->
-    if not <| executeFSIWithArgs "docs/tools" "generate.fsx" ["--define:RELEASE"; "--define:REFERENCE"] [] then
-      failwith "generating reference documentation failed"
-)
+Target "GenerateReferenceDocs" DoNothing
+//Target "GenerateReferenceDocs" (fun _ ->
+//    if not <| executeFSIWithArgs "docs/tools" "generate.fsx" ["--define:RELEASE"; "--define:REFERENCE"] [] then
+//      failwith "generating reference documentation failed"
+//)
 
 let generateHelp' fail debug =
     let args =
@@ -202,17 +206,18 @@ let generateHelp' fail debug =
 let generateHelp fail =
     generateHelp' fail false
 
-Target "GenerateHelp" (fun _ ->
-    DeleteFile "docs/content/release-notes.md"
-    CopyFile "docs/content/" "RELEASE_NOTES.md"
-    Rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
-
-    DeleteFile "docs/content/license.md"
-    CopyFile "docs/content/" "LICENSE.txt"
-    Rename "docs/content/license.md" "docs/content/LICENSE.txt"
-
-    generateHelp true
-)
+Target "GenerateHelp" DoNothing
+//Target "GenerateHelp" (fun _ ->
+//    DeleteFile "docs/content/release-notes.md"
+//    CopyFile "docs/content/" "RELEASE_NOTES.md"
+//    Rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
+//
+//    DeleteFile "docs/content/license.md"
+//    CopyFile "docs/content/" "LICENSE.txt"
+//    Rename "docs/content/license.md" "docs/content/LICENSE.txt"
+//
+//    generateHelp true
+//)
 
 Target "GenerateHelpDebug" (fun _ ->
     DeleteFile "docs/content/release-notes.md"
@@ -342,7 +347,7 @@ Target "All" DoNothing
   ==> "GenerateReferenceDocs"
   ==> "GenerateDocs"
   ==> "All"
-  =?> ("ReleaseDocs",isLocalBuild)
+//  =?> ("ReleaseDocs",isLocalBuild)
 
 "All" 
 #if MONO
