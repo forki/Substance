@@ -5,14 +5,14 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitleAttribute("Substance.Collections.Generic")]
 [assembly: AssemblyProductAttribute("Substance")]
 [assembly: AssemblyDescriptionAttribute("...")]
-[assembly: AssemblyVersionAttribute("0.0.9")]
-[assembly: AssemblyFileVersionAttribute("0.0.9")]
+[assembly: AssemblyVersionAttribute("0.0.10")]
+[assembly: AssemblyFileVersionAttribute("0.0.10")]
 [assembly: InternalsVisibleToAttribute("Substance.Tests")]
 [assembly: InternalsVisibleToAttribute("Substance.Collections")]
 [assembly: InternalsVisibleToAttribute("Substance.Collections.Generic")]
 [assembly: InternalsVisibleToAttribute("Substance.Collections.Immutable")]
 namespace System {
     internal static class AssemblyVersionInformation {
-        internal const string Version = "0.0.9";
+        internal const string Version = "0.0.10";
     }
 }
